@@ -1,0 +1,8 @@
+<ul>
+	<li *ngFor="let item of listItems"><p>{{item}}</p> <img (click)="removeItem(item)" alt="delete item icon" src="../../assets/delete.png"/></li>
+</ul>
+<p id="duplicateMsg">{{duplicateMsg}}</p>
+<div class="input">
+	<input placeholder="add shopping items here" [(ngModel)]="newItem" type="text" class="form-control" autofocus >
+	<button class="btn btn-primary" (click)="addItem()">Add Item</button>
+</div>
