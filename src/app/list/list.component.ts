@@ -11,8 +11,8 @@ export class ListComponent implements OnInit {
 	deleteItem:string = '';
 	duplicateMsg = '';
   constructor() {
-		this.listItems = ["eggs", "milk", "cheese"];
-	 }
+		this.listItems = JSON.parse(localStorage.getItem("shoppingList") || '[]');
+	}
 
   ngOnInit(): void {
   }
@@ -24,6 +24,7 @@ export class ListComponent implements OnInit {
 		} else {
 			this.listItems.push(this.newItem.toLowerCase());
 			this.newItem = '';
+			localStorage.setItem("shoppingList", JSON.stringify(this.listItems));
 		}
 	}
 
@@ -31,7 +32,7 @@ export class ListComponent implements OnInit {
 		this.deleteItem = item;
 		this.listItems.forEach((item,index)=>{
 			if(item==this.deleteItem) this.listItems.splice(index,1);
+			localStorage.setItem("shoppingList", JSON.stringify(this.listItems));
 	 });
 	}
-
 }
