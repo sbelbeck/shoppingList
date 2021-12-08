@@ -9,7 +9,7 @@ li p {
 
 li {
   list-style: none;
-  padding: 20px;
+  padding: 10px;
   font-size: 2rem;
   border: solid 0.5px lightgrey;
   display: flex;
