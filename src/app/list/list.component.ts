@@ -29,6 +29,7 @@ export class ListComponent implements OnInit {
 	}
 
 	removeItem(item:string){
+		this.duplicateMsg = '';
 		this.deleteItem = item;
 		this.listItems.forEach((item,index)=>{
 			if(item==this.deleteItem) this.listItems.splice(index,1);
